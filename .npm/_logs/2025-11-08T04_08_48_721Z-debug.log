@@ -1,0 +1,42 @@
+0 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
+1 info using npm@7.17.0
+2 info using node@v14.21.3
+3 timing npm:load:whichnode Completed in 56ms
+4 timing config:load:defaults Completed in 71ms
+5 timing config:load:file:/usr/lib/node_modules/npm/npmrc Completed in 56ms
+6 timing config:load:builtin Completed in 60ms
+7 timing config:load:cli Completed in 91ms
+8 timing config:load:env Completed in 8ms
+9 timing config:load:file:/.npmrc Completed in 4ms
+10 timing config:load:project Completed in 19ms
+11 timing config:load:file:/root/.npmrc Completed in 2ms
+12 timing config:load:user Completed in 4ms
+13 timing config:load:file:/etc/npmrc Completed in 2ms
+14 timing config:load:global Completed in 3ms
+15 timing config:load:validate Completed in 5ms
+16 timing config:load:credentials Completed in 46ms
+17 timing config:load:setEnvs Completed in 39ms
+18 timing config:load Completed in 353ms
+19 timing npm:load:configload Completed in 359ms
+20 timing npm:load:setTitle Completed in 4ms
+21 timing npm:load:setupLog Completed in 58ms
+22 timing npm:load:cleanupLog Completed in 86ms
+23 timing npm:load:configScope Completed in 0ms
+24 timing npm:load:projectScope Completed in 6ms
+25 timing npm:load Completed in 589ms
+26 timing config:load:flatten Completed in 100ms
+27 timing command:run-script Completed in 234ms
+28 timing command:start Completed in 394ms
+29 verbose stack Error: ENOENT: no such file or directory, open '//package.json'
+30 verbose cwd /
+31 verbose Linux 4.20.69-ish
+32 verbose argv "/usr/bin/node" "/usr/bin/npm" "start"
+33 verbose node v14.21.3
+34 verbose npm  v7.17.0
+35 error code ENOENT
+36 error syscall open
+37 error path //package.json
+38 error errno -2
+39 error enoent ENOENT: no such file or directory, open '//package.json'
+40 error enoent This is related to npm not being able to find a file.
+41 verbose exit -2

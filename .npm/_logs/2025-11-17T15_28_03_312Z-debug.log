@@ -1,0 +1,65 @@
+0 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+1 info using npm@7.17.0
+2 info using node@v14.21.3
+3 timing npm:load:whichnode Completed in 55ms
+4 timing config:load:defaults Completed in 71ms
+5 timing config:load:file:/usr/lib/node_modules/npm/npmrc Completed in 56ms
+6 timing config:load:builtin Completed in 60ms
+7 timing config:load:cli Completed in 91ms
+8 timing config:load:env Completed in 9ms
+9 timing config:load:project Completed in 16ms
+10 timing config:load:file:/root/.npmrc Completed in 5ms
+11 timing config:load:user Completed in 6ms
+12 timing config:load:file:/etc/npmrc Completed in 2ms
+13 timing config:load:global Completed in 4ms
+14 timing config:load:validate Completed in 5ms
+15 timing config:load:credentials Completed in 46ms
+16 timing config:load:setEnvs Completed in 41ms
+17 timing config:load Completed in 355ms
+18 timing npm:load:configload Completed in 361ms
+19 timing npm:load:setTitle Completed in 4ms
+20 timing npm:load:setupLog Completed in 56ms
+21 timing npm:load:cleanupLog Completed in 87ms
+22 timing npm:load:configScope Completed in 0ms
+23 timing npm:load:projectScope Completed in 6ms
+24 timing npm:load Completed in 590ms
+25 timing config:load:flatten Completed in 100ms
+26 timing arborist:ctor Completed in 35ms
+27 timing idealTree:init Completed in 411ms
+28 timing idealTree:userRequests Completed in 7ms
+29 silly idealTree buildDeps
+30 timing idealTree:#root Completed in 3ms
+31 timing idealTree:buildDeps Completed in 41ms
+32 timing idealTree:fixDepFlags Completed in 4ms
+33 timing idealTree Completed in 503ms
+34 timing reify:loadTrees Completed in 599ms
+35 timing reify:diffTrees Completed in 27ms
+36 silly reify moves {}
+37 timing reify:retireShallow Completed in 9ms
+38 timing reify:createSparse Completed in 3ms
+39 timing reify:loadBundles Completed in 0ms
+40 silly audit report null
+41 timing reify:audit Completed in 21ms
+42 timing reify:unpack Completed in 5ms
+43 timing reify:unretire Completed in 2ms
+44 timing build:queue Completed in 1ms
+45 timing build:deps Completed in 13ms
+46 timing build Completed in 17ms
+47 timing reify:build Completed in 25ms
+48 timing reify:trash Completed in 2ms
+49 timing reify:save Completed in 64ms
+50 timing reify Completed in 1413ms
+51 timing command:install Completed in 1623ms
+52 verbose stack Error: ENOENT: no such file or directory, open '/root/package.json'
+53 verbose cwd /root
+54 verbose Linux 4.20.69-ish
+55 verbose argv "/usr/bin/node" "/usr/bin/npm" "install"
+56 verbose node v14.21.3
+57 verbose npm  v7.17.0
+58 error code ENOENT
+59 error syscall open
+60 error path /root/package.json
+61 error errno -2
+62 error enoent ENOENT: no such file or directory, open '/root/package.json'
+63 error enoent This is related to npm not being able to find a file.
+64 verbose exit -2

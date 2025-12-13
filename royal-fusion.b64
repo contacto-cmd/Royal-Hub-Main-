@@ -1,0 +1,9 @@
+base64 -d royal-fusion.b64 > royal-fusion.zip
+unzip royal-fusion.zip
+cd royal-fusion
+git init
+git add .
+git commit -m "Royal Fusion: MVP init"
+git branch -M main
+git remote add origin https://github.com/streetemporioroyal/royal-fusion.git
+git push -u origin main
