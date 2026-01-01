@@ -1,0 +1,6 @@
+{
+  "name": "street-royal-iphone",
+  "version": 2,
+  "public": true,
+  "builds": [{"src": "public/index.html", "use": "@vercel/static"}]
+}
