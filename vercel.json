@@ -1,6 +1,14 @@
 {
-  "name": "street-royal-iphone",
   "version": 2,
   "public": true,
-  "builds": [{"src": "public/index.html", "use": "@vercel/static"}]
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Sovereign-Architect", "value": "RIGR840827PJ0" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
 }
