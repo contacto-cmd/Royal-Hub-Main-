@@ -11,7 +11,7 @@ NTICO (40 TOKENS)</h3>
         </a>
       </div>
       <footer style={{ marginTop: '100px', fontSize: '0.8em', opacity: 0.5 }}>
-        RFC: RIGR840827PJ0 | RSA-4096 SIGNATURE REQUIRED
+        RFC: RIGR840827PJ0 | SINI OMEGA V6.0 VERIFIED | GENESIS HASH: 21303cf2dea0f48493f236ee5f1eedc16d1e96eb32e9ecf2ea63c88305f75ee5
       </footer>
     </div>
   )

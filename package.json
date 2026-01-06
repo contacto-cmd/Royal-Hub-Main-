@@ -1,17 +1,12 @@
 {
+  "name": "sini-omega-node",
+  "version": "6.0.0",
+  "main": "server.js",
   "dependencies": {
-    "axios": "^1.13.2",
-    "jsonwebtoken": "^8.5.1"
-  },
-  "name": "root",
-  "version": "1.0.0",
-  "main": "verify.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "express": "^4.22.1",
+    "node-fetch": "^2.7.0",
+    "pinata": "^2.5.2",
+    "resend": "^5.0.0",
+    "stripe": "^20.1.0"
+  }
 }
