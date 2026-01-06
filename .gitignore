@@ -1,0 +1,9 @@
+*.pem
+*.sig
+*.token
+*.enc
+.ssh/
+.vercel/
+.netrc
+node_modules/
+*.log

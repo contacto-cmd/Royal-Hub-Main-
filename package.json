@@ -1,0 +1,12 @@
+{
+  "name": "sini-omega-node",
+  "version": "6.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.22.1",
+    "node-fetch": "^2.7.0",
+    "pinata": "^2.5.2",
+    "resend": "^5.0.0",
+    "stripe": "^20.1.0"
+  }
+}

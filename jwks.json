@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "alg": "RS256",
+      "kid": "sini-omega-supreme-v6-key-1",
+      "n": "nE55BWBJFHVenyCuQtgRO2CcZsDK-li5EIgYJp9nT1olhQIxjyzu2XLOIbDp_mvSVyYnw0fWmXQ-x9UGe7b_U4IOb7vKdlDgPnDsVUeAYLYxvSzJr1bIdAVvBau58Yr08VeM0YOk9xqSU6P_9aluxAbzld-VwJn2rOTbu2yCe3jQRwktTtMJ_1wu3I-jkVcPVltrbOIWU_eWrOSrI3N9oDgiu0znQazJMYida7DY7sMk7NyNVILc4yse1CQIXA7adJ9Oy3gyJ8tta7N-R4EHhCfrW9ZUAzzjLgCXtMha7OSuXxq63frXAV3hAcZa4nO3SPtRilFedCcfF7ld4TxbzcdXUkkqiLEUxgjkknQsHLJsDWZfe40VxE_xtMApUHlFLNZoksINDi5DPT7IEsgIWNY4p6lsTjfoRFSpnqqHwTNY0UxE1afRG3eZPzWq1XdEkxTa74Yg1pS0tAfCuB7LvRtQaNF2x5nsT5fB2VzXfEkukZwX_6N3zv-M9RqA1ADdaURpZ3l4jLSO7KY65yqqY5Po2e9Z_gUuBgOnRyhNlTIsu0AWGoi0iNrgmEI1o4ENRDidA1s_a_HilNRaJxcyDvUmj5tPZ2zoohC1416_8wqITLkXi33jIkycpYQdR2AzlGut6x0zs2+7UG0OuI1QFQzp_pb0Me7E7NKQ2vbaQrECAwEAAQ",
+      "e": "AQAB"
+    }
+  ]
+}
