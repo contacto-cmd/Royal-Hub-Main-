@@ -3,7 +3,10 @@
   "version": "6.0.0",
   "main": "server.js",
   "dependencies": {
+    "@workos-inc/node": "^7.81.0",
+    "ethers": "^5.7.2",
     "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
     "node-fetch": "^2.7.0",
     "pinata": "^2.5.2",
     "resend": "^5.0.0",
