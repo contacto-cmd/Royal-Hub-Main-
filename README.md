@@ -84,8 +84,8 @@ royal-hub-main/
 
 ### RFC Soberano
 ```
-RFC Principal: RIGR840827PJ0
-Nacimiento: 27 de agosto de 1984
+RFC Principal: «RFC en bóveda privada»
+Identidad fiscal: no divulgada
 Fecha: 2026-05-12
 Estatus: ✅ VERIFIED
 ```
@@ -173,7 +173,7 @@ GET /health
 
 ```bash
 POST /auth/master-login
-# Body: { api_key: "...", rfc: "RIGR840827PJ0" }
+# Body: { api_key: "...", rfc: "«RFC en bóveda privada»" }
 # Response: { token: "JWT...", expires: "3600" }
 ```
 
@@ -227,7 +227,7 @@ railway deploy
 # Environment variables:
 # - PORT: 3000
 # - NODE_ENV: production
-# - RFC_PRINCIPAL: RIGR840827PJ0
+# - RFC_PRINCIPAL: «RFC en bóveda privada»
 ```
 
 ### Cloudflare DNS
@@ -276,7 +276,7 @@ TXT: RFC verification
 ## 📞 Contacto
 
 **CEO/Founder:** Roberto Rivera Gamas  
-**RFC:** RIGR840827PJ0  
+**RFC:** «RFC en bóveda privada»  
 **Email:** contacto@streetemporioroyal.com  
 **Website:** https://streetemporioroyal.com  
 **GitHub:** https://github.com/contacto-cmd  
