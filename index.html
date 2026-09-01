@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street Emporio Royal — Hub de Comando</title>
+  <meta name="description" content="Street Emporio Royal — Hub de Comando. Infraestructura soberana, identidad criptográfica y seguridad documental." />
+  <style>
+    :root{
+      --teal:#00f5ff;
+      --gold:#d4af37;
+      --void:#020409;
+      --deep:#070b14;
+      --panel:#0c1220;
+      --line:#1b2740;
+      --green:#00ff88;
+      --amber:#ffb020;
+      --text:#e8eefc;
+      --muted:#8ea0c0;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+      background:radial-gradient(1200px 800px at 70% -10%,rgba(0,245,255,.08),transparent 60%),
+                 radial-gradient(1000px 700px at 0% 100%,rgba(212,175,55,.07),transparent 55%),
+                 var(--void);
+      color:var(--text);
+      line-height:1.55;
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* top bar */
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(2,4,9,.82);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.14em}
+    .brand .sym{color:var(--gold);font-size:22px}
+    .brand small{display:block;font-weight:500;letter-spacing:.28em;color:var(--muted);font-size:10px}
+    .nav-actions{display:flex;gap:10px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 16px;border-radius:10px;font-size:13px;font-weight:600;
+      border:1px solid var(--line);color:var(--text);transition:.2s;cursor:pointer;background:transparent
+    }
+    .btn:hover{border-color:var(--teal);color:var(--teal)}
+    .btn.gold{background:linear-gradient(135deg,var(--gold),#b8912b);color:#1a1400;border:none}
+    .btn.gold:hover{filter:brightness(1.08);color:#1a1400}
+
+    /* hero */
+    .hero{padding:74px 0 40px;text-align:center}
+    .omega{font-size:44px;color:var(--gold);margin-bottom:8px}
+    .kicker{letter-spacing:.4em;font-size:11px;color:var(--teal);text-transform:uppercase;margin-bottom:18px}
+    .hero h1{font-size:clamp(30px,5vw,52px);letter-spacing:.02em;line-height:1.08}
+    .hero .ver{color:var(--muted);font-weight:500;font-size:15px;letter-spacing:.22em;margin-top:12px}
+    .hero .arch{margin-top:10px;color:var(--text);font-size:15px}
+    .hero .arch b{color:var(--gold)}
+    .pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+    .pill{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:12px;letter-spacing:.16em;color:var(--muted)}
+    .pill.on{border-color:rgba(0,255,136,.4);color:var(--green)}
+
+    /* sections */
+    section.block{padding:46px 0}
+    .h{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .h h2{font-size:20px;letter-spacing:.04em}
+    .h .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+    /* quick access */
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{
+      border:1px solid var(--line);background:var(--panel);border-radius:12px;
+      padding:12px 16px;font-size:13px;color:var(--text);transition:.2s;font-weight:500
+    }
+    .chip:hover{border-color:var(--teal);transform:translateY(-2px)}
+
+    /* projects grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--deep));
+      border:1px solid var(--line);border-radius:16px;padding:22px;transition:.2s;position:relative;overflow:hidden
+    }
+    .card:hover{border-color:var(--gold);transform:translateY(-3px)}
+    .card .ico{font-size:26px;color:var(--gold);margin-bottom:12px}
+    .card h3{font-size:16px;margin-bottom:6px}
+    .card p{color:var(--muted);font-size:13px;margin-bottom:16px}
+    .tag{font-size:11px;font-weight:700;letter-spacing:.14em;padding:5px 12px;border-radius:999px}
+    .tag.on{background:rgba(0,255,136,.12);color:var(--green);border:1px solid rgba(0,255,136,.3)}
+    .tag.pend{background:rgba(255,176,32,.12);color:var(--amber);border:1px solid rgba(255,176,32,.3)}
+
+    /* certificates panel */
+    .cert{
+      background:linear-gradient(135deg,rgba(212,175,55,.10),rgba(0,245,255,.05));
+      border:1px solid var(--line);border-radius:18px;padding:34px;text-align:center
+    }
+    .cert .lock{font-size:34px;color:var(--gold);margin-bottom:10px}
+    .cert h3{font-size:18px;margin-bottom:8px}
+    .cert p{color:var(--muted);font-size:14px;max-width:560px;margin:0 auto 20px}
+    .cert .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* credentials */
+    .creds{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+    .badge{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:20px;text-align:center}
+    .badge .b{font-size:26px;margin-bottom:10px}
+    .badge h4{font-size:15px;margin-bottom:4px}
+    .badge span{color:var(--muted);font-size:12px}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+    .contact .item{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel)}
+    .contact .item small{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+    .contact .item a,.contact .item span{color:var(--teal);font-size:15px;word-break:break-word}
+
+    footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+    footer .sym{color:var(--gold)}
+    @media(max-width:560px){.bar{height:auto;flex-direction:column;gap:12px;padding:12px 0}.hero{padding:48px 0 24px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="brand">
+        <span class="sym">&#9819;</span>
+        <span>STREET EMPORIO ROYAL<small>HUB DE COMANDO</small></span>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="#certificados">Verificar</a>
+        <a class="btn gold" href="#certificados">Ingresar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="omega">&#937;</div>
+      <div class="kicker">V6.0 — Hybrid Sovereign Architect</div>
+      <h1>SINI OMEGA SUPREME</h1>
+      <div class="ver">SISTEMA PRINCIPAL &middot; ARQUITECTO MAESTRO</div>
+      <div class="arch">Arquitecto: <b>Roberto Rivera Gamas</b></div>
+      <div class="pills">
+        <span class="pill">SOBERANÍA TOTAL</span>
+        <span class="pill on">OPERACIONAL</span>
+        <span class="pill">EJERCICIO FISCAL 2026</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="h"><h2>Accesos Rápidos</h2><span class="rule"></span></div>
+      <div class="chips">
+        <a class="chip" href="https://aistudio.google.com" target="_blank" rel="noopener">AI Studio</a>
+        <a class="chip" href="https://replit.com" target="_blank" rel="noopener">Replit</a>
+        <a class="chip" href="https://github.com/contacto-cmd" target="_blank" rel="noopener">GitHub</a>
+        <a class="chip" href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+        <a class="chip" href="https://railway.app" target="_blank" rel="noopener">Railway</a>
+        <a class="chip" href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>
+        <a class="chip" href="https://figma.com" target="_blank" rel="noopener">Figma</a>
+        <a class="chip" href="https://slack.com" target="_blank" rel="noopener">Slack</a>
+        <a class="chip" href="https://workos.com" target="_blank" rel="noopener">WorkOS</a>
+        <a class="chip" href="https://notion.so" target="_blank" rel="noopener">Notion</a>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="h"><h2>Proyectos Activos</h2><span class="rule"></span></div>
+      <div class="grid">
+        <div class="card">
+          <div class="ico">&#9819;</div>
+          <h3>SINI OMEGA SUPREME V6.0</h3>
+          <p>Sistema Principal — Arquitecto Maestro</p>
+          <span class="tag on">ACTIVO</span>
+        </div>
+        <div class="card">
+          <div class="ico">&#9819;</div>
+          <h3>Throne Protocol V3.0</h3>
+          <p>AI 3D Brain — Algoritmo Ancestral</p>
+          <span class="tag on">ACTIVO</span>
+        </div>
+        <div class="card">
+          <div class="ico">&#9889;</div>
+          <h3>ALPHA HIGH TECH Enterprise</h3>
+          <p>Gemini — Enterprise Ready</p>
+          <span class="tag on">ACTIVO</span>
+        </div>
+        <div class="card">
+          <div class="ico">&#127919;</div>
+          <h3>Plano Maestro AI Sistema</h3>
+          <p>Orquestador de Sistemas</p>
+          <span class="tag on">ACTIVO</span>
+        </div>
+        <div class="card">
+          <div class="ico">&#128081;</div>
+          <h3>Royal Hub Main</h3>
+          <p>Centro de Comando Principal</p>
+          <span class="tag on">ACTIVO</span>
+        </div>
+        <div class="card">
+          <div class="ico">&#128225;</div>
+          <h3>Satellite Live Status</h3>
+          <p>Monitoreo en Tiempo Real</p>
+          <span class="tag pend">PENDIENTE</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="certificados">
+      <div class="h"><h2>Certificados Digitales</h2><span class="rule"></span></div>
+      <div class="cert">
+        <div class="lock">&#128274;</div>
+        <h3>Acceso Restringido</h3>
+        <p>Para crear y gestionar certificados necesitas iniciar sesión. La verificación pública está disponible sin cuenta.</p>
+        <div class="row">
+          <a class="btn gold" href="#">Iniciar Sesión</a>
+          <a class="btn" href="#">Verificar Certificado</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="h"><h2>Credenciales &amp; Certificaciones</h2><span class="rule"></span></div>
+      <div class="creds">
+        <div class="badge"><div class="b">&#127942;</div><h4>Sistema Supremo</h4><span>Arquitecto Certificado</span></div>
+        <div class="badge"><div class="b">&#128272;</div><h4>RSA-4096</h4><span>Encriptación Verificada</span></div>
+        <div class="badge"><div class="b">&#9989;</div><h4>Validación Técnica</h4><span>Verificación Criptográfica</span></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="h"><h2>Información de Contacto</h2><span class="rule"></span></div>
+      <div class="contact">
+        <div class="item">
+          <small>Correo Empresarial</small>
+          <a href="mailto:contacto@streetemporioroyal.com">contacto@streetemporioroyal.com</a>
+        </div>
+        <div class="item">
+          <small>Dominio Principal</small>
+          <a href="https://streetemporioroyal.com" target="_blank" rel="noopener">streetemporioroyal.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Documento Oficial &middot; Protegido por SINI OMEGA V6.0</p>
+    <p><span class="sym">&#9819;</span> &copy; 2026 Street Emporio Royal — Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
